@@ -1,0 +1,20 @@
+﻿@page
+@using option_one.Components
+@model option_one.Pages.Promo.IndexModel
+@{
+    ViewData["Title"] = "Services";
+}
+
+<div>
+    <h1 class="display-4 mt-3 mb-3">Services</h1>
+
+    @(await Html.RenderComponentAsync<ServiceFilter>(RenderMode.ServerPrerendered))
+
+
+    @foreach (var service in Model.services)
+    {
+        @(await Html.RenderComponentAsync<ServiceCard>(RenderMode.ServerPrerendered, new { service = service}))
+    }
+
+</div>
+

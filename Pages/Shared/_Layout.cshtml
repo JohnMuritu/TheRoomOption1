@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - option_one</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    
+</head>
+<body>
+    <div class="container-fluid form_bg_color">
+        <div class="row">
+            <div class="col-md-1" id="sidebar-wrapper">
+                <nav class="d-none d-md-block bg-dark sidebar align_items_center">
+                    <div class="App-logo w-100">
+                        <img src="~/images/logo.svg" alt="logo" />
+                    </div>
+                    <div class="sidebar_items_div w-100">
+
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-md-11" id="page-content-wrapper">
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                        <div class="container-fluid">
+                            <div class="row w-100">
+                                <div class="col-md-2">
+                                    <div>
+                                        <small class="text-muted">Balance</small>
+                                    </div>
+                                    <div>
+                                        213 920 $
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div>
+                                        <small class="text-muted">Payout</small>
+                                    </div>
+                                    <div>
+                                        159 465 $
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </nav>
+                </header>
+
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

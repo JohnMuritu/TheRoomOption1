@@ -1,0 +1,56 @@
+﻿@using option_one.Models
+@using System.Net.Http;
+@using Microsoft.AspNetCore.Components
+@using System.Text.Json;
+@using System.Text.Json.Serialization;
+@inject HttpClient httpClient
+
+<div class="card serviceCard mb-3">
+    <div class="card-body">
+        <div class="card-title">
+            @service.ServiceTitle
+        </div>
+        <div class="row align_items_bottom">
+            <div class="col-md-5">
+                <div class="card-text">
+                    @service.ServiceDesc
+                </div>
+            </div>
+            <div class="col-md-4">
+                <span class="promocodespan">
+                    <small class="text-muted">PROMOCODE</small>
+                </span>
+                <div class="promocode_container">
+                    <input class="form-control promoCode_input"
+                           type="text"
+                           placeholder="Promo Code"
+                           value=@service.ServicePromocode />
+
+                    <i class="copy_img">
+                        <i class="far fa-copy" style="color:blue" ></i>
+                    </i>
+
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="form-control btn btn-primary">Activate bonus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public Services service { get; set; }
+
+    @*public async Task<Services> ActivatePromoCode(int serviceId, Services _service)
+        {
+            //var json = new JsonSerializer.Serialize(service);
+
+            var response = await httpClient.PostJsonAsync("/api/services/activate/", service);
+            return response;
+        }*@
+
+}
